@@ -8,7 +8,7 @@ public class Main {
 		JFrame HelloW = new HelloWindow();
 		HelloW.setVisible(true);
 		JFrame TestW = new TestWindow();
-		TestW.setVisible(true);
+		TestW.setVisible(false);
 		JFrame RegW = new RegWindow();
 		RegW.setVisible(true);
 		

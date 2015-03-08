@@ -9,10 +9,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class HelloWindow extends JFrame{
-	JPanel mainp, slavep, thp;
+	
 	JTextField log, pass;
 	JLabel inlog, inpass;
 	JButton gostart, regnow;
+	
 	public HelloWindow(){
 		super("Авторизация");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

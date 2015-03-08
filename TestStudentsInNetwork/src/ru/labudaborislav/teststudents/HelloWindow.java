@@ -1,7 +1,7 @@
 package ru.labudaborislav.teststudents;
 
-import java.awt.GridLayout;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,6 +13,7 @@ public class HelloWindow extends JFrame{
 	JTextField log, pass;
 	JLabel inlog, inpass;
 	JButton gostart, regnow;
+	reactclas reacttoreg = new reactclas();
 	
 	public HelloWindow(){
 		super("Авторизация");
@@ -48,7 +49,21 @@ public class HelloWindow extends JFrame{
 		mainPanel.add(pass);
 		mainPanel.add(gostart);
 		mainPanel.add(regnow);
+		regnow.addActionListener(reacttoreg);
 		setContentPane(mainPanel);
+		
+	}
+	
+	public class reactclas implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			JFrame RegW = new RegWindow();
+//			JFrame HelloW = new HelloWindow();
+			if(e.getSource()==regnow){
+				setVisible(false);
+				RegW.setVisible(true);
+				
+			}
+		}
 		
 	}
 }

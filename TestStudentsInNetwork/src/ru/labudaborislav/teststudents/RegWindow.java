@@ -1,16 +1,22 @@
 package ru.labudaborislav.teststudents;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import ru.labudaborislav.teststudents.HelloWindow.reactclas;
+
 public class RegWindow extends JFrame{
 	
 	JTextField logn, passn, group;
 	JLabel inlogn, inpassn, statreg, groupn, regstat;
 	JButton back, regnown;
+	reactclas reacttoreg = new reactclas();
 	
 	public RegWindow(){
 		
@@ -57,7 +63,20 @@ public class RegWindow extends JFrame{
 		mainPanel.add(group);
 		mainPanel.add(groupn);
 		mainPanel.add(regstat);
+		back.addActionListener(reacttoreg);
 		setContentPane(mainPanel);
 		
+	}
+	public class reactclas implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			
+			JFrame HelloW = new HelloWindow();
+			if(e.getSource()==back){
+				setVisible(false);
+				HelloW.setVisible(true);
+				
+			}
+	
+}
 	}
 }

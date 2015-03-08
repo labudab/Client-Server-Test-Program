@@ -2,13 +2,13 @@ package ru.labudaborislav.teststudents;
 
 import javax.swing.JFrame;
 
-public class TestWindow extends JFrame {
-	public TestWindow(){
-		super("Тестирование");
+public class RegWindow extends JFrame{
+	public RegWindow(){
+		super("Регистрация нового пользователя");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(1024, 768);
+		setSize(800, 800);
 		setResizable(false);
 		setLocationRelativeTo(null);
+		
 	}
-
 }

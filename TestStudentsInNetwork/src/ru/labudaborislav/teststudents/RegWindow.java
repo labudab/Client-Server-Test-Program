@@ -1,7 +1,9 @@
 package ru.labudaborislav.teststudents;
 
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,17 +11,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import ru.labudaborislav.teststudents.HelloWindow.reactclas;
+import by.zti.SerializationManager;
 
 public class RegWindow extends JFrame{
-	
 	JTextField logn, passn, group;
 	JLabel inlogn, inpassn, statreg, groupn, regstat;
 	JButton back, regnown;
 	reactclas reacttoreg = new reactclas();
 	
 	public RegWindow(){
-		
 		super("Регистрация нового пользователя");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(400, 400);
@@ -64,19 +64,36 @@ public class RegWindow extends JFrame{
 		mainPanel.add(groupn);
 		mainPanel.add(regstat);
 		back.addActionListener(reacttoreg);
+		regnown.addActionListener(reacttoreg);
 		setContentPane(mainPanel);
 		
 	}
 	public class reactclas implements ActionListener{
-		public void actionPerformed(ActionEvent e){
-			
-			JFrame HelloW = new HelloWindow();
+				public ArrayList<UsersClass> userlist = new ArrayList<UsersClass>();
+				public void actionPerformed(ActionEvent e){
 			if(e.getSource()==back){
+				JFrame HelloW = new HelloWindow();
 				setVisible(false);
 				HelloW.setVisible(true);
+		
+			}
+			if(e.getSource()==regnown){
+				UsersClass callUS = new UsersClass();
+				
+				callUS.setLoginreg(logn.getText());
+				callUS.setPassreg(passn.getText());
+				callUS.setGrpreg(group.getText());
+				System.out.println(callUS.getLoginreg());
+				System.out.println(callUS.getPassreg());
+				System.out.println(callUS.getGrpreg());
+				//users.add(regdata);
+				//System.out.println(regdata.size());
+				SerializationManager.serializeData(callUS,"users","dat","Data//");
 				
 			}
 	
 }
 	}
+	
+	
 }

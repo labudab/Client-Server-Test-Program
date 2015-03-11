@@ -4,7 +4,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="ZTI-Serialization-Tool.jar" sourcepath="ZTISM-source.zip">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/TestStudentsInNetwork/ZTISM-doc.zip!/"/>
+			<attribute name="javadoc_location" value="jar:platform:/resource/AutorizationModule11/ZTISM-doc.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
